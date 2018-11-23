@@ -12,6 +12,7 @@ const arrowNode = document.querySelector('.arrow');
 //缓存小箭头一半的宽度（减少重绘重排）
 const arrowHalfWidth = arrowNode.offsetWidth / 2;
 
+//1，设置导航中每个li中，鼠标点击哪个li哪个li对应添加active类。2，小箭头的位置改变。
 for (let i = 0; i < liNodes.length; i++) {
   liNodes[i].onclick = function () {
     //先让所有的li都没有class类
