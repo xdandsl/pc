@@ -24,4 +24,4 @@ for (let i = 0; i < liNodes.length; i++) {
 }
 
 //设置小箭头的起始位置。别忘记加px
-arrowNode.style.left = liNodes[1].getBoundingClientRect().left + liNodes[1].offsetWidth / 2 - arrowHalfWidth + 'px';
+arrowNode.style.left = liNodes[0].getBoundingClientRect().left + liNodes[0].offsetWidth / 2 - arrowHalfWidth + 'px';
