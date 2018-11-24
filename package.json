@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config ./config/webpack.dev.js",
     "dev": "webpack-dev-server --config ./config/webpack.dev.js",
-    "pru": "webpack-dev-server --config ./config/webpack.pru.js"
+    "prod": "webpack --config ./config/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",

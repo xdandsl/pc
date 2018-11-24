@@ -31,7 +31,7 @@ const webpack = require('webpack');
 
 module.exports = {
   //入口起点
-  entry: './src/js/index.js',
+  entry: ['./src/js/index.js','./src/index.html'],
   //输出
   output: {
     path: resolve(__dirname, '../dist'),
@@ -62,12 +62,18 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,   // 8kb以下的图片会做base64处理
-              publicPath: '../images',  //修改样式中url图片路径
+              publicPath: './images',  //修改样式中url图片路径
               outputPath: 'images',  //图片最终输入的路径
               name: '[name].[ext]'  //hash 文件哈希值（可以指定位数）  ext 文件扩展名
             }
           }
         ]
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader'
+        }
       },
       {
         test: /\.js$/, // 涵盖 .js 文件
@@ -122,4 +128,4 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin()  //压缩js代码
   ]
-}
+};

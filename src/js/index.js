@@ -7,5 +7,8 @@ import '../less/index.less';
 
 //引入main文件
 import main from './main';
+//引入firstview模块
+import firstView from './firstView';
 
 main();
+firstView();
