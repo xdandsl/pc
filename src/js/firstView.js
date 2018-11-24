@@ -49,7 +49,7 @@ export default function () {
       lastIndex = nowIndex;
 
       lastTime = nowTime;
-    }
+    };
   }
 
   autoPlay();
@@ -69,7 +69,7 @@ export default function () {
       pointsNodes[nowIndex].className = 'active';
 
       lastIndex = nowIndex;
-    },2000)
+    },2000);
   }
 
   //绑定鼠标移入移出事件
