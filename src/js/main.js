@@ -7,6 +7,7 @@ export default function () {
   const arrowNode = document.querySelector('.arrow');
   const ulNode = document.querySelector('#content>ul');
   const contentNode = document.querySelector('#content');
+  const contentNavLiNodes = document.querySelectorAll('.content-nav li'); //获取侧边导航的li
 
   //代表内容区li的下标
   let nowIndex = 0;
@@ -81,16 +82,30 @@ export default function () {
   }
 
   function move(nowIndex) {
-    //先让所有的li都没有class类
+    //1，头部文字：先让所有的li都没有class类
     for (var j = 0; j < liNodes.length; j++) {
       liNodes[j].className = '';
     }
     //对应的导航li添加class类
     liNodes[nowIndex].className = 'active';
-    //改变小箭头的位置
+    //2，改变小箭头的位置
     arrowNode.style.left = liNodes[nowIndex].getBoundingClientRect().left + liNodes[nowIndex].offsetWidth / 2 - arrowHalfWidth + 'px';
-    //设置ul的高度
+    //3，设置内容区ul的高度
     ulNode.style.top = -nowIndex * contentHeight + 'px';
+
+    //4，侧边导航的li对应添加active类
+    for (var j = 0; j < contentNavLiNodes.length; j++) {
+      contentNavLiNodes[j].className = '';
+    }
+    contentNavLiNodes[nowIndex].className = 'active';
+  }
+
+  //3,给侧边导航的li添加点击事件
+  for (let i = 0; i < contentNavLiNodes.length; i++) {
+    contentNavLiNodes[i].onclick = function () {
+      nowIndex = i;
+      move(nowIndex);
+    }
   }
 
   //当窗口改变的时候：重新计算小箭头的位置和ul的位置

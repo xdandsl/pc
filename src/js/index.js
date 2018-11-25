@@ -10,5 +10,8 @@ import main from './main';
 //引入firstview模块
 import firstView from './firstView';
 
+import lastView from './lastView';
+
 main();
 firstView();
+lastView();
